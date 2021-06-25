@@ -1,0 +1,21 @@
+The MIPS processor has 32 general purpose 32-bit registers, 
+referenced as $0 .. $31. Some of these registers are intended to be used in 
+particular ways by programmers and by the system. 
+For each of the registers below, give their symbolic name and 
+describe their intended use:
+
+
+General Variables:
+$8 = $t0 Temporary register ($t0 - $t9)
+$16 = $s0 Saved register ($s0 - $s7)
+
+Special Uses:
+$0 = $zero The "zero" register
+$2 = $v0 Return value
+$4 = $a0 Argument register $a1 $a3
+$29 = $sp Stack Pointer
+$31 = $ra Return address
+
+(probably) Don't Touch™:
+$1 = $at "Assembler temporary"
+$26 = $k0 Kernel register ($k1)
