@@ -128,3 +128,62 @@ You are not permitted to use another algorithm to print prime numbers.
 </ul>
 </aside>
 
+<h1>task 4: MIPS factorial</h1>
+<p>
+In the files for this lab,
+you have been given <a href="{{activity_url}}files.cp/factorial.s"><code>factorial.s</code></a>.
+Add code to make it equivalent to this C program:
+
+{{ include_code("files.ln/factorial.c") }}
+
+<p>
+For example:
+
+<pre is="tty">
+<kbd is="sh">1521 spim -f factorial.s</kbd>
+Enter n: <kbd>5</kbd>
+5! = 120
+<kbd is="sh">1521 spim -f factorial.s</kbd>
+Enter n: <kbd>7</kbd>
+7! = 5040
+<kbd is="sh">1521 spim -f factorial.s</kbd>
+Enter n: <kbd>1</kbd>
+1! = 1
+</pre>
+
+<aside class="note">
+<ul class="list-unstyled">
+<li><p>
+You must implement the code in <code>factorial.c</code>
+as a recursive function.
+<li><p>
+You may not use another algorithm to calculate or print factorials.
+</ul>
+</aside>
+
+<h1>Challenge: MIPS big factorial</h1>
+
+<p>
+Create a MIPS program <code>big_factorial.s</code>
+which will calculate arbitrarily large factorials.
+For example:
+
+<pre is="tty">
+<kbd is="sh">1521 spim -f big_factorial.s</kbd>
+Enter n: <kbd>42</kbd>
+42! = 1405006117752879898543142606244511569936384000000000
+<kbd is="sh">1521 spim -f big_factorial.s</kbd>
+Enter n: <kbd>112</kbd>
+112! = 197450685722107402353682037275992488341277868034975337796656295094902858969771811440894224355027779366597957338237853638272334919686385621811850780464277094400000000000000000000000000
+</pre>
+
+<aside class="note">
+<ul class="list-unstyled">
+<li><p>
+You are not permitted to use floating point arithmetic
+(<code>float</code> or <code>double</code>).
+<li><p>
+Your MIPS code must calculate the factorial.
+You cannot look up precalculated values.
+</ul>
+</aside>
