@@ -1,0 +1,130 @@
+<h1>task 1: addi instruction</h1>
+<p>
+The function <code>addi</code> is given the operands for a MIPS <b>addi</b> instruction .
+Add code so that it returns the opcode for that instruction.
+<p>
+The <a href="{{url_root}}/assignments/ass1/index.html">assignment 1 specifcation</a> provides the
+general bit pattern for an <b>addi</b> instruction.
+<p>
+<code>1521 spim2hex</code> can be used
+to print the opcode for a particular <b>addi</b> instruction, for example:
+
+<pre is="tty">
+<kbd is="sh">echo 'addi $17 $19 -3'|1521 spim2hex</kbd>
+2271fffd
+<kbd is="sh">./addi 17 19 -3</kbd>
+addi(17, 19, -3) returned 0x2271fffd
+<kbd is="sh">echo 'addi $9 $27 42'|1521 spim2hex</kbd>
+2369002a
+<kbd is="sh">./addi 9 27 42</kbd>
+2369002a
+</pre>
+
+<p>
+Use <cite>make(1)</cite> to build your code:
+<pre is="tty">
+<kbd is="sh">make</kbd>    <span class="comment"># or 'make addi'</span>
+</pre>
+
+<h6>Assumptions/Limitations/Clarifications</h6>
+<ul class="list-unstyled">
+<li><p>
+You may define and call your own functions if you wish.
+
+<li><p>
+You are not permitted
+   to change the <code>main</code> function you have been given,
+or to change <code>addi</code>' prototype (its return type and argument types).
+
+</ul>
+
+<h1>task 2: MIPS 2d array</h1>
+<p>
+In the files for this lab,
+you have been given <a href="{{activity_url}}files.cp/lookup.s"><code>lookup.s</code></a>,
+a MIPS assembler program that
+reads 2 numbers and then prints 42.
+
+<p>
+Add code to <code>lookup.s</code>
+to make it equivalent to this C program:
+
+{{ include_code("files.ln/lookup.c") }}
+
+<p>
+In other words,
+it should read 2 numbers and use them as array indices
+to print a value from a 2 dimensional array.
+For example:
+
+<pre is="tty">
+<kbd is="sh">1521 spim -f lookup.s</kbd>
+Enter x: <kbd>5</kbd>
+Enter y: <kbd>8</kbd>
+4
+<kbd is="sh">1521 spim -f lookup.s</kbd>
+Enter x: <kbd>41</kbd>
+Enter y: <kbd>23</kbd>
+2
+<kbd is="sh">1521 spim -f lookup.s</kbd>
+Enter x: <kbd>0</kbd>
+Enter y: <kbd>0</kbd>
+9
+</pre>
+
+<aside class="hint">
+<p>
+The MIPS you given already has suitable directives
+to create an array equivalent to the one in the C program.
+</aside>
+
+<h6>Assumptions/Limitations/Clarifications</h6>
+<p>
+You can assume both numbers read are valid array indices.
+
+<h1>task 3 : MIPS sieve</h1>
+<p>
+In the files for this lab,
+you have been given <a href="{{activity_url}}files.cp/sieve.s"><code>sieve.s</code></a>.
+<p>
+Add code to <code>sieve.s</code>
+to make it equivalent to this C program:
+
+{{ include_code("files.ln/sieve.c") }}
+
+<p>
+Use the space in the data area to store the array <code>prime</code>.
+For example:
+
+<pre is="tty">
+<kbd is="sh">1521 spim -f sieve.s</kbd>
+2
+3
+5
+7
+11
+13
+17
+19
+23
+...
+971
+977
+983
+991
+997
+</pre>
+
+<aside class="hint">
+<p>
+Use <code>lb</code> and <code>sb</code> instruction to access array <code>prime</code>.
+</aside>
+
+<aside class="note">
+<ul class="list-unstyled">
+<li><p>
+You must implement the algorithm in <code>sieve.c</code>.
+You are not permitted to use another algorithm to print prime numbers.
+</ul>
+</aside>
+
